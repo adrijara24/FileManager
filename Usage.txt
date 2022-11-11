@@ -1,0 +1,14 @@
+Usage:
+
+>cd (newRelDir) Changes the current working directory, starts at the location of the executable
+
+>gdir () Prints the current working directory.
+
+>mkfile (n, size) Creates n files filled with size bytes on the current working directory location.
+
+>cpfile (fileName, relPath, newFileName) Copies the file into the desired directory. The file must be at the current working directory. Returns the copy time in seconds as a double
+
+>cpydir (newDir) Copies all the files in the current working directory into the desired path, the path MUST include the directory name. Returns the copy time in seconds as a double
+
+I did this in a rush for a university course of probability & statistics. Currently I only tested compiling it on windows.
+Will be expanded in the future.
