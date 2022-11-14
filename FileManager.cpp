@@ -77,13 +77,16 @@ void FileManager::CreateFiles(int n, unsigned long int size)
 double FileManager::CopyFile(const string &fileName, const string &newPath, const string &newFileName)
 {
     fs::path from, to;
-    from = fs::path(GetDirectory() + "\\" + fileName);
+    from = fs::path(GetDirectory() / fs::path(fileName));
     if(fs::is_directory(from))
     {
         cout << "error: input path is a directory" << endl;
         return -1.0;
     }
-    to = fs::path(GetDirectory() / fs::path(newPath));
+    if(newPath == ".")
+        to = fs::path(GetDirectory());
+    else
+        to = fs::path(GetDirectory() / fs::path(newPath));
     to = fs::path(to / newFileName);
     std::chrono::time_point<std::chrono::system_clock> start, end;
     start = std::chrono::system_clock::now();
